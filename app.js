@@ -32,17 +32,22 @@ const handler = function(context){
     context.onEvent('variables')
         .then(
             function (vars){
+                return context.answer();
+            }
+        )
+        .then(
+            function (vars){
                 return context.streamFile('beep');
             }
         )
         .then(
             function (results){
-                return context.setVariable('RECOGNITION_RESULT', 'I\'m your father, Luc');
+                return context.setVariable('res', '111111');
             }
         )
         .then(
             function (results){
-                return context.end();
+                return context.end(); // ???
             }
         );
     //.then(
@@ -62,6 +67,6 @@ const handler = function(context){
 
 }
 
-const agi = new AGIServer(handler);
+const agi = new AGIServer(handler, { debug : true });
 agi.start(3000);
 

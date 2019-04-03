@@ -23,31 +23,34 @@ client.connect(
     }); // end then.
 */
 
-const AGIServer = require('ding-dong');
-
-// method 참조.
 // https://github.com/antirek/ding-dong/blob/master/API.md
 // https://github.com/antirek/ding-dong
+//
+
+const AGIServer = require('ding-dong');
+
 const handler = function(context){
     context.onEvent('variables')
         .then(
             function (vars){
+                console.log('service name==> ', vars.agi_network_script);
                 return context.answer();
             }
         )
         .then(
             function (vars){
-                return context.streamFile('beep');
+                console.log('vars==> ', vars);
+                return context.streamFile('beep'); // wav beepp file play
             }
         )
         .then(
             function (results){
-                return context.setVariable('res', '111111');
+                return context.setVariable('res', '111111'); // variable set
             }
         )
         .then(
             function (results){
-                return context.end(); // ???
+                return context.end(); // 종료
             }
         );
     //.then(
@@ -68,5 +71,5 @@ const handler = function(context){
 }
 
 const agi = new AGIServer(handler, { debug : true });
-agi.start(3000);
+agi.start(4573);
 

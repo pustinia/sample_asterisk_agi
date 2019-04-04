@@ -4,6 +4,12 @@ Create AGI server with ding-dong.
 Use with Asterisk for fast telephony apps.
 testing ding-dong apps. 
 
+2019.04.04 adding
+1. make a mp3 file by google tts api request
+2. connect local redis
+3. using redis key in asterisk 'agi_network_script' parameter
+4. can do TTS with redis database.
+
 ## Confgure asterisk
 
 extensions.conf

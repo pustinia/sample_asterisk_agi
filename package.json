@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "ari-client": "^2.1.0",
-    "ding-dong": "^0.1.7"
+    "ding-dong": "^0.1.7",
+    "redis": "^2.8.0"
   }
 }

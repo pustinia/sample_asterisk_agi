@@ -9,6 +9,7 @@ testing ding-dong apps.
 2. connect local redis
 3. using redis key in asterisk 'agi_network_script' parameter
 4. can do TTS with redis database.
+5. connecting asterisk parameter (not yet....)
 
 ## Confgure asterisk
 

@@ -65,7 +65,7 @@ const handler = function(context){
                 // call streamFile Method with tts file.
 
                 //return context.streamFile('beep'); // wav beepp file play
-                const mp3File = 'http://172.30.1.56:8080/translate_tts.wav';
+                const mp3File = 'http://127.0.0.1:8080/translate_tts.wav';
                 //return context.controlStreamFile(mp3File, '1', 0, '#', '*', '2', 1);
                 return context.streamFile(mp3File);
             }

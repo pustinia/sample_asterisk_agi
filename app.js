@@ -33,6 +33,7 @@ const path = require('path');
 const redis = require('redis');
 
 const client = redis.createClient(6380,'127.0.0.1');
+// @ts-ignore
 client.on("error", function (err) {
     console.log("Error " + err);
 });
@@ -109,7 +110,7 @@ console.log(params.get('keyname'));
 // 실제 적용에는, tts 가 wav 파일을 변경하기 때문에, 파일의 변경을 막아주는 로직이 필요하다.
 
 const strKey = "tts_ment_1";
-// redis get 수행.
+// @ts-ignore
 client.get(strKey, function (err, reply) {
 
     console.log('key=>' + reply.toString()); // Will print `OK`
@@ -124,8 +125,7 @@ client.get(strKey, function (err, reply) {
 
 });
 
-
-
+// @ts-ignore
 const agi = new AGIServer(handler, { debug : true });
 agi.start(4573);
 
